@@ -1,0 +1,214 @@
+<!--Update Basic Form-->
+<div th:fragment="basic-form">
+    <form th:object="${profile}" th:action="@{/profile/basic}" method="POST">
+        <div class="modal fade" id="basicModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Basic Form</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table">
+                            <input type="hidden" th:field="*{id}" readonly="">
+                            <tr>
+                                <td>NAME</td>
+                                <td><input type="text" th:field="*{name}"></td>
+                            </tr>
+                            <tr>
+                                <td>BIRTHDATE</td>
+                                <td><input type="text" th:field="*{birthDate}"></td>
+                            </tr>
+                            <tr>
+                                <td>GENDER</td>
+                                <td><input type="text" th:field="*{gender}"></td>
+                            </tr>
+                            <tr>
+                                <td>EMAIL</td>
+                                <td><input type="text" th:field="*{email}"></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div><!--
+        --></form>
+</div>
+
+<!--Update Address Form-->
+<div th:fragment="address-form">
+    <form th:object="${address}" th:action="@{/profile/address}" method="POST">
+        <div class="modal fade" id="addressModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Address Form</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table">
+                            <input type="hidden" th:field="*{id}" readonly="">
+                            <tr>
+                                <td>CITY</td>
+                                <td><input type="text" th:field="*{city}"></td>
+                            </tr>
+                            <tr>
+                                <td>PROVINCE</td>
+                                <td><input type="text" th:field="*{province}"></td>
+                            </tr>
+                            <tr>
+                                <td>STREET1</td>
+                                <td><input type="text" th:field="*{street1}"></td>
+                            </tr>
+                            <tr>
+                                <td>STREET2</td>
+                                <td><input type="text" th:field="*{street2}"></td>
+                            </tr>
+                            <tr>
+                                <td>ZIPCODE</td>
+                                <td><input type="text" th:field="*{zipCode}"></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div><!--
+        --></form>
+</div>
+
+<!--Update Contact Form-->
+<div th:fragment="contact-form">
+    <form th:object="${contact}" th:action="@{/profile/contact}" method="POST">
+        <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Contact Form</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table">
+                            <input type="hidden" th:field="*{id}" readonly="">
+                            <tr>
+                                <td>PHONE</td>
+                                <td><input type="text" th:field="*{phone}"></td>
+                            </tr>
+                            <tr>
+                                <td>INSTAGRAM</td>
+                                <td><input type="text" th:field="*{instagram}"></td>
+                            </tr>
+                            <tr>
+                                <td>LINKEDIN</td>
+                                <td><input type="text" th:field="*{linkedin}"></td>
+                            </tr>
+                            <tr>
+                                <td>FACEBOOK</td>
+                                <td><input type="text" th:field="*{facebook}"></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div><!--
+        --></form>
+</div>
+
+<!--Update Current Occupation Form-->
+<div th:fragment="occupation-form">
+    <form th:object="${occupation}" th:action="@{/profile/currentoccupation}" method="POST">
+        <div class="modal fade" id="occupationModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Current Occupation Form</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table">
+                            <input type="hidden" th:field="*{id}" readonly="">
+                            <tr>
+                                <td>CURRENT COMPANY</td>
+                                <td><input type="text" th:field="*{currentCompany}"></td>
+                            </tr>
+                            <tr>
+                                <td>JOB</td>
+                                <td><input type="text" th:field="*{job}"></td>
+                            </tr>
+                            <tr>
+                                <td>WEBSITE</td>
+                                <td><input type="text" th:field="*{website}"></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<!--Update Education Form-->
+<div th:fragment="education-form">
+    <form th:object="${education}" th:action="@{/profile/education}" method="POST">
+        <div class="modal fade" id="educationModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Education Form</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table">
+                            <input type="hidden" th:field="*{id}" readonly="">
+                            <tr>
+                                <td>MAJOR</td>
+                                <td><input type="text" th:field="*{major}"></td>
+                            </tr>
+                            <tr>
+                                <td>UNIVERSITY</td>
+                                <td><input type="text" th:field="*{university}"></td>
+                            </tr>
+                            <tr>
+                                <td>DEGREE</td>
+                                <td><input type="text" th:field="*{degree}"></td>
+                            </tr>
+                            <tr>
+                                <td>STATUS</td>
+                                <td><input type="text" th:field="*{status}"></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Login</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" th:href="@{style.css}">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark justify-content-center">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <div th:replace="fragments/userInformation::basic-form"></div>
+                    <a class="nav-link" href="landingPage.html" data-toggle="modal" data-target="#basicModal">Basic</a>
+                </li>
+                <li class="nav-item">
+                    <div th:replace="fragments/userInformation::address-form"></div>
+                    <a class="nav-link" href="landingPage.html" data-toggle="modal" data-target="#addressModal">Address</a>
+                </li>
+                <li class="nav-item">
+                    <div th:replace="fragments/userInformation::contact-form"></div>
+                    <a class="nav-link" href="landingPage.html" data-toggle="modal" data-target="#contactModal">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <div th:replace="fragments/userInformation::occupation-form"></div>
+                    <a class="nav-link" href="landingPage.html" data-toggle="modal" data-target="#occupationModal">Occupation</a>
+                </li>
+                <li class="nav-item">
+                    <div th:replace="fragments/userInformation::education-form"></div>
+                    <a class="nav-link" href="landingPage.html" data-toggle="modal" data-target="#educationModal">Education</a>
+                </li>
+                <li class="nav-item">
+                            <a th:href="@{/}" class="btn bg-light" type="button">LOGOUT</a>
+                </li>
+
+            </ul>
+        </nav>
+        <div class="container">
+            <table border="1" class="table bg-light">
+                <tr>
+                    <th colspan="2">BASIC INFORMATION</th>
+                </tr>
+
+                <tr th:each="as : ${profile}">
+                    <td>ID</td>
+                    <td th:text="${as.id}"></td>
+                </tr>
+                <tr th:each="as : ${profile}">
+                    <td>NAME</td>
+                    <td th:text="${as.name}"></td>
+                </tr>
+                <tr th:each="as : ${profile}">
+                    <td>BIRTHDATE</td>
+                    <td th:text="${as.birthDate}"></td>
+                </tr>
+                <tr th:each="as : ${profile}">
+                    <td>GENDER</td>
+                    <td th:text="${as.gender}"></td>
+                </tr>
+                <tr th:each="as : ${profile}">
+                    <td>EMAIL</td>
+                    <td th:text="${as.email}"></td>
+                </tr>
+
+                <tr>
+                    <th colspan="2">ADDRESS INFORMATION</th>
+                </tr>
+                <tr th:each="as : ${address}">
+                    <td>CITY</td>
+                    <td th:text="${as.city}"></td>
+                </tr>
+                <tr th:each="as : ${address}">
+                    <td>PROVINCE</td>
+                    <td th:text="${as.province}"></td>
+                </tr>
+                <tr th:each="as : ${address}">
+                    <td>STREET 1</td>
+                    <td th:text="${as.street1}"></td>
+                </tr>
+                <tr th:each="as : ${address}">
+                    <td>STREET 2</td>
+                    <td th:text="${as.street2}"></td>
+                </tr>
+                <tr th:each="as : ${address}">
+                    <td>BIRTHDATE</td>
+                    <td th:text="${as.zipCode}"></td>
+                </tr>
+
+                <tr>
+                    <th colspan="2">CONTACT INFORMATION</th>
+                </tr>
+                <tr th:each="as : ${contact}">
+                    <td >PHONE</td>
+                    <td th:text="${as.phone}"></td>
+                </tr>
+                <tr th:each="as : ${contact}">
+                    <td>INSTAGRAM</td>
+                    <td th:text="${as.instagram}"></td>
+                </tr>
+                <tr th:each="as : ${contact}">
+                    <td>LINKEDIN</td>
+                    <td th:text="${as.linkedin}"></td>
+                </tr>
+                <tr th:each="as : ${contact}">
+                    <td>FACEBOOK</td>
+                    <td th:text="${as.facebook}"></td>
+                </tr>
+
+                <tr>
+                    <th colspan="2">CURRENT OCCUPATION INFORMATION</th>
+                </tr>
+                <tr th:each="as : ${occupation}">
+                    <td >CURRENT COMPANY</td>
+                    <td th:text="${as.currentCompany}"></td>
+                </tr>
+                <tr th:each="as : ${occupation}">
+                    <td>JOB</td>
+                    <td th:text="${as.job}"></td>
+                </tr>
+                <tr th:each="as : ${occupation}">
+                    <td>WEBSITE</td>
+                    <td th:text="${as.website}"></td>
+                </tr>
+                <tr>
+                    <th colspan="2">EDUCATION INFORMATION</th>
+                </tr>
+                <tr th:each="as : ${education}">
+                    <td >DEGREE</td>
+                    <td th:text="${as.degree}"></td>
+                </tr>
+                <tr th:each="as : ${education}">
+                    <td>MAJOR</td>
+                    <td th:text="${as.major}"></td>
+                </tr>
+                <tr th:each="as : ${education}">
+                    <td>STATUS</td>
+                    <td th:text="${as.status}"></td>
+                </tr>
+                <tr th:each="as : ${education}">
+                    <td>UNIVERSITY</td>
+                    <td th:text="${as.university}"></td>
+                </tr>
+            </table>
+        </div>
+
+
+    </body>
+</html>
