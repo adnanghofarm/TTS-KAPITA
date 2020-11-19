@@ -53,16 +53,24 @@ public class RestController {
     //login
     @PostMapping("login")
     public String login(LoginInput input) {
-        System.out.println(service.login(input));
+//        System.out.println(service.login(input));
+        try {
+            id = service.getById(service.login(input));
+            return "redirect:/profile/";
+        } catch (Exception e) {
+        }
         id = service.getById(service.login(input));
-        System.out.println(id);
-        return "redirect:/profile/";
+//        System.out.println(id);
+        return "redirect:/";
     }
 
     @PostMapping("/register/")
     public String saveRegister(RegisterInput input) {
-        System.out.println(input);
-        registerRestService.register(input);
+        try {
+            registerRestService.register(input);
+            return "redirect:/";
+        } catch (Exception e) {
+        }
         return "redirect:/";
     }
 
